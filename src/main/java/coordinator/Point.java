@@ -13,6 +13,11 @@ public class Point {
 		validate(value);
 		this.value = value;
 	}
+
+	public double extract(Point point) {
+		return this.value - point.value;
+	}
+
 	private void validate(int value) {
 		if (value > MAX_LIMIT) {
 			throw new IllegalArgumentException("24를 초과할 수 없습니다.");
