@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringUtils {
-	private static final Pattern INPUT_PATTERN = Pattern.compile("\\((\\d+),(\\d+)\\)-\\((\\d+),(\\d+)\\)");
+	private static final Pattern INPUT_PATTERN = Pattern.compile("\\((-*\\d+),(-*\\d+)\\)-\\((-*\\d+),(-*\\d+)\\)");
 	private static final int NUMBER_COUNT = 4;
 
 	public static int[] splitCoordinateString(String input) {

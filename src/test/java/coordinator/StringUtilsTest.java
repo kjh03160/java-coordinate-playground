@@ -11,6 +11,8 @@ class StringUtilsTest {
 	void 좌표를_구분한다() {
 		Assertions.assertThat(StringUtils.splitCoordinateString("(10,2)-(3,4)"))
 			.contains(10, 2, 3, 4);
+		Assertions.assertThat(StringUtils.splitCoordinateString("(-10,2)-(3,4)"))
+			.contains(-10, 2, 3, 4);
 		Assertions.assertThatThrownBy(()->StringUtils.splitCoordinateString("10,1)-(1,1)"))
 			.isInstanceOf(IllegalArgumentException.class)
 			.hasMessage("입력 형식에 맞지 않습니다");
