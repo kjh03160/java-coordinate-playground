@@ -2,6 +2,7 @@ package coordinator;
 
 import coordinator.utils.StringUtils;
 import coordinator.view.InputView;
+import coordinator.view.ResultView;
 
 public class Main {
 	public static void main(String[] args) {
@@ -17,6 +18,7 @@ public class Main {
 				System.out.println(e.getMessage());
 			}
 		}
-
+		double distance = Calculator.calculateDistance(coordinate1, coordinate2);
+		ResultView.printDistance(distance);
 	}
 }
