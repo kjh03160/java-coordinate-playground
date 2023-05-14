@@ -1,4 +1,4 @@
-package coordinator;
+package coordinator.domain;
 
 public class Coordinate {
 	private final Point x;
@@ -8,6 +8,11 @@ public class Coordinate {
 		this.x = new Point(x);
 		this.y = new Point(y);
 	}
+
+	public double distanceFrom(Coordinate coordinate) {
+		return Calculator.calculateDistance(this, coordinate);
+	}
+
 	Point getX() {
 		return x;
 	}

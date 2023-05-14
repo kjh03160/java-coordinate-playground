@@ -1,10 +1,13 @@
-package coordinator;
+package coordinator.domain;
 
 import org.assertj.core.api.Assertions;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Test;
 
-class SquareTest {
+import coordinator.domain.Coordinate;
+import coordinator.domain.Rectangle;
+
+class RectangleTest {
 
 	@Test
 	void 사각형을_생성한다() {
@@ -13,12 +16,12 @@ class SquareTest {
 		Coordinate c3 = new Coordinate(0, 5);
 		Coordinate c4 = new Coordinate(4, 5);
 
-		Square square = new Square(Lists.newArrayList(c4, c2, c3, c1));
+		Rectangle rectangle = new Rectangle(Lists.newArrayList(c4, c2, c3, c1));
 
-		Assertions.assertThat(square.getLeftDownCoordinate()).isEqualTo(c1);
-		Assertions.assertThat(square.getRightDownCoordinate()).isEqualTo(c2);
-		Assertions.assertThat(square.getLeftUpCoordinate()).isEqualTo(c3);
-		Assertions.assertThat(square.getRightUpCoordinate()).isEqualTo(c4);
+		Assertions.assertThat(rectangle.getLeftDownCoordinate()).isEqualTo(c1);
+		Assertions.assertThat(rectangle.getRightDownCoordinate()).isEqualTo(c2);
+		Assertions.assertThat(rectangle.getLeftUpCoordinate()).isEqualTo(c3);
+		Assertions.assertThat(rectangle.getRightUpCoordinate()).isEqualTo(c4);
 	}
 
 	@Test
@@ -27,7 +30,7 @@ class SquareTest {
 		Coordinate c2 = new Coordinate(4, 0);
 		Coordinate c3 = new Coordinate(0, 5);
 
-		Assertions.assertThatThrownBy(() -> new Square(Lists.newArrayList(c1, c2, c3)))
+		Assertions.assertThatThrownBy(() -> new Rectangle(Lists.newArrayList(c1, c2, c3)))
 			.isInstanceOf(IllegalArgumentException.class)
 			.hasMessage("4개의 좌표가 필요합니다.");
 	}
@@ -39,7 +42,7 @@ class SquareTest {
 		Coordinate c3 = new Coordinate(0, 5);
 		Coordinate c4 = new Coordinate(4, 6);
 
-		Assertions.assertThatThrownBy(() -> new Square(Lists.newArrayList(c1, c2, c3, c4)))
+		Assertions.assertThatThrownBy(() -> new Rectangle(Lists.newArrayList(c1, c2, c3, c4)))
 			.isInstanceOf(IllegalArgumentException.class)
 			.hasMessage("직사각형이 아닙니다.");
 	}
@@ -51,8 +54,8 @@ class SquareTest {
 		Coordinate c3 = new Coordinate(0, 5);
 		Coordinate c4 = new Coordinate(4, 5);
 
-		Square square = new Square(Lists.newArrayList(c4, c2, c3, c1));
+		Rectangle rectangle = new Rectangle(Lists.newArrayList(c4, c2, c3, c1));
 
-		Assertions.assertThat(square.area()).isEqualTo(20);
+		Assertions.assertThat(rectangle.area()).isEqualTo(20);
 	}
 }

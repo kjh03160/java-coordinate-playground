@@ -1,7 +1,10 @@
-package coordinator;
+package coordinator.domain;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import coordinator.domain.Coordinate;
+import coordinator.domain.Point;
 
 public class CoordinateTest {
 	@Test

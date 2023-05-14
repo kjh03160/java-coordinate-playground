@@ -1,8 +1,6 @@
-package coordinator;
+package coordinator.domain;
 
 import java.util.Objects;
-
-import javax.xml.validation.Validator;
 
 public class Point {
 	private static final int MAX_LIMIT = 24;

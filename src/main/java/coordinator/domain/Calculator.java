@@ -1,4 +1,7 @@
-package coordinator;
+package coordinator.domain;
+
+import coordinator.domain.Coordinate;
+import coordinator.domain.Point;
 
 public class Calculator {
 	public static double calculateDistance(Coordinate c1, Coordinate c2) {

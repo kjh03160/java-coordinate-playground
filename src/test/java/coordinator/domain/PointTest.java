@@ -1,8 +1,10 @@
-package coordinator;
+package coordinator.domain;
 
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import coordinator.domain.Point;
 
 class PointTest {
 

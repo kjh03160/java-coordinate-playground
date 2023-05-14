@@ -1,14 +1,15 @@
-package coordinator;
+package coordinator.domain;
 
 import java.util.List;
+import java.util.Objects;
 
-public class Square {
+public class Rectangle extends AbstractFigure {
 	private Coordinate leftDownCoordinate;
 	private Coordinate leftUpCoordinate;
 	private Coordinate rightDownCoordinate;
 	private Coordinate rightUpCoordinate;
 
-	public Square(List<Coordinate> coordinates) {
+	public Rectangle(List<Coordinate> coordinates) {
 		sort(coordinates);
 		validate(coordinates);
 		this.leftDownCoordinate = coordinates.get(0);
@@ -63,5 +64,23 @@ public class Square {
 
 	Coordinate getRightUpCoordinate() {
 		return rightUpCoordinate;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		Rectangle rectangle = (Rectangle)o;
+		return Objects.equals(leftDownCoordinate, rectangle.leftDownCoordinate)
+			&& Objects.equals(leftUpCoordinate, rectangle.leftUpCoordinate)
+			&& Objects.equals(rightDownCoordinate, rectangle.rightDownCoordinate)
+			&& Objects.equals(rightUpCoordinate, rectangle.rightUpCoordinate);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(leftDownCoordinate, leftUpCoordinate, rightDownCoordinate, rightUpCoordinate);
 	}
 }

@@ -1,8 +1,11 @@
-package coordinator;
+package coordinator.domain;
 
 import org.assertj.core.api.Assertions;
 import org.assertj.core.data.Offset;
 import org.junit.jupiter.api.Test;
+
+import coordinator.domain.Calculator;
+import coordinator.domain.Coordinate;
 
 class CalculatorTest {
 
