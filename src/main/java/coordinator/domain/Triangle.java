@@ -1,6 +1,7 @@
 package coordinator.domain;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Triangle extends AbstractFigure {
 	private static final String NAME = "삼각형";
@@ -31,5 +32,20 @@ public class Triangle extends AbstractFigure {
 		double s = (distance1 + distance2 + distance3) / 2;
 
 		return Math.sqrt(s * (s - distance1) * (s - distance2) * (s - distance3));
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		Triangle triangle = (Triangle)o;
+		return Objects.equals(coordinates, triangle.coordinates);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(coordinates);
 	}
 }

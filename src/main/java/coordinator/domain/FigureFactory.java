@@ -8,7 +8,7 @@ public class FigureFactory {
 
 	public static Figure create(List<Coordinate> coordinates) {
 		if (coordinates.size() == TRIANGLE_SIZE) {
-
+			return new Triangle(coordinates);
 		}
 		if (coordinates.size() == RECTANGLE_SIZE) {
 			return new Rectangle(coordinates);
