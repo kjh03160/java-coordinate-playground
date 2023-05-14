@@ -58,4 +58,16 @@ class RectangleTest {
 
 		Assertions.assertThat(rectangle.area()).isEqualTo(20);
 	}
+
+	@Test
+	void 사각형의_이름() {
+		Coordinate c1 = new Coordinate(0, 0);
+		Coordinate c2 = new Coordinate(4, 0);
+		Coordinate c3 = new Coordinate(0, 5);
+		Coordinate c4 = new Coordinate(4, 5);
+
+		Rectangle rectangle = new Rectangle(Lists.newArrayList(c4, c2, c3, c1));
+
+		Assertions.assertThat(rectangle.name()).isEqualTo("사각형");
+	}
 }

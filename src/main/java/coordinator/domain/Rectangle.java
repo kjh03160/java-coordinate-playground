@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Rectangle extends AbstractFigure {
+	private static final String NAME = "사각형";
 	private Coordinate leftDownCoordinate;
 	private Coordinate leftUpCoordinate;
 	private Coordinate rightDownCoordinate;
@@ -18,6 +19,12 @@ public class Rectangle extends AbstractFigure {
 		this.rightUpCoordinate = coordinates.get(3);
 	}
 
+	@Override
+	public String name() {
+		return NAME;
+	}
+
+	@Override
 	public double area() {
 		return Calculator.calculateDistance(leftDownCoordinate, rightDownCoordinate)
 			* Calculator.calculateDistance(leftDownCoordinate, leftUpCoordinate);
